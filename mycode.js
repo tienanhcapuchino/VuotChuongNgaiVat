@@ -1,12 +1,12 @@
 var target_date = new Date().getTime() + (1000*3600*48); // set the countdown date
-var days, hours, minutes, seconds; // variables for time units
+var seconds; // variables for time units
 
 var countdown = document.getElementById("tiles"); // get tag element
 
 getCountdown();
 
 setInterval(function () { getCountdown(); }, 1000);
-
+var sec = 0;
 function getCountdown(){
 
 	// find the amount of "seconds" between now and target
@@ -17,19 +17,13 @@ function getCountdown(){
 
 	// format countdown string + set tag value
 	countdown.innerHTML ="<span>" + seconds + "</span>"; 
+	sec = seconds;
+	if (sec == 0) {
+		document.getElementById("submit").style.display = "none";
+	}
 }
 
 function pad(n) {
 	return (n < 10 ? '0' : '') + n;
 }
 var k = 0;
-function MyButton(){
-	if(k % 2 == 0){
-		document.getElementById("button").style.display = "none";
-		k ++;
-	}
-	else{
-		document.getElementById("button").style.display = "block";
-		k ++;
-	}
-}
