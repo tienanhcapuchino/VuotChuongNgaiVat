@@ -22,3 +22,14 @@ function getCountdown(){
 function pad(n) {
 	return (n < 10 ? '0' : '') + n;
 }
+var k = 0;
+function MyButton(){
+	if(k % 2 == 0){
+		document.getElementById("button").style.display = "none";
+		k ++;
+	}
+	else{
+		document.getElementById("button").style.display = "block";
+		k ++;
+	}
+}
