@@ -12,17 +12,31 @@
             font-family: "Comic Sans MS", cursive, sans-serif;
             text-align: center;
         }
+        input{
+            font-size: 20px;
+        }
+        .lienket a{
+            font-size: 20px;
+            text-decoration: none;
+            border: 1px solid black;
+            border-radius: 40%;
+        }
+        .lienket a:hover{
+            background-color: black;
+            color: bisque;
+        }
     </style>
 </head>
 <body>
     <div>
         <h1>GAME: VƯỢT CHƯỚNG NGẠI VẬT</h1>
     </div>
-    <div>
+    <div class="thongtin">
         Tên của bạn <input type="text" name="ten" placeholder="Tên của bạn">  
-        <input type="submit" value="Submit">   
+        <input id="button" type="submit" value="Submit">   
     </div>
-    <div>
+    <br>
+    <div class="lienket">
         <a href="game.html">Bấm vào đây để chơi game</a>
     </div>
 </body>
