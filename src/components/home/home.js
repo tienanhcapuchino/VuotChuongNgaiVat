@@ -1,25 +1,32 @@
 import React from "react";
-// import { useEffect } from "react";
+import "./home.css";
+import { useHistory } from "react-router-dom";
 
 export default function Home() {
+  const history = useHistory();
   return (
-    <>
-      <div>
-        <input type="button" value="Trả lời chướng ngại vật" />
+    <div className="home">
+      <div class="year">
+        <img src="/assets/images/2022.png" alt="2022" />
       </div>
-      <br />
-      <div id="countdown">
-        <div id="tiles"></div>
-        <div class="labels">
-          <li>Secs</li>
-        </div>
+      <div class="trangchu">
+        <img src="/assets/images/gl.png" alt="Good Luck!" />
       </div>
-      <div>
-        <input type="text" placeholder="Câu trả lời của bạn là" />
-        <br />
-        <br />
-        <input type="submit" value="Submit" />
+      <div class="batdau">
+        <a
+          onClick={() => {
+            history.push("/game");
+          }}
+        >
+          START
+        </a>
+        {/* <Link to="/game">START</Link> */}
       </div>
-    </>
+      <div class="anhdep">
+        <img src="/assets/images/tiger.png" alt="Con hổ" />
+      </div>
+    </div>
   );
 }
+
+// export default Home;

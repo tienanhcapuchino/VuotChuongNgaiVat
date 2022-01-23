@@ -13,7 +13,7 @@ const SignUp = () => {
   const history = useHistory();
   useEffect(() => {
     if (localStorage.getItem("user-info")) {
-      history.push("/");
+      history.push("/home");
     }
   });
 
@@ -42,12 +42,9 @@ const SignUp = () => {
           };
         });
         await handleSignUpAPI(state).then((response) => {
-          console.log(JSON.stringify(response.data));
-          if (response.data.data) {
-            localStorage.setItem(
-              "user-info",
-              JSON.stringify(response.data.data)
-            );
+          console.log(JSON.stringify(response));
+          if (response.data) {
+            localStorage.setItem("username", JSON.stringify(response.data));
             history.push("/home");
           }
         });
@@ -64,13 +61,17 @@ const SignUp = () => {
 
   return (
     <div>
-      <div className="container-fluid bg-login login-container">
+      <div className="container-fluid bg login-container">
         <main className="signup-form">
           <form onSubmit={handleSubmit}>
-            <h1 className="login-title mb-4">Sign up</h1>
+            <h1 className="login-title mb-4" style={{ color: "green" }}>
+              Sign up
+            </h1>
             <div className="form-group row mb-3">
               <div className="col-sm-2 col-form-label">
-                <label htmlFor="username">Username</label>
+                <label htmlFor="username" style={{ fontSize: "18px" }}>
+                  Username
+                </label>
               </div>
               <div className="col-sm-10">
                 <input

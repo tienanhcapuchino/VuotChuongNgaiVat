@@ -88,3 +88,10 @@ i.fas {
   position: relative;
   height: 26px;
 }
+
+.bg {
+  background-image: url("https://i.pinimg.com/originals/76/a8/ea/76a8ea33d8fbc7ed64732b66528b027b.png");
+  background-size: cover;
+  background-position: bottom 20% center;
+  height: 100vh;
+}

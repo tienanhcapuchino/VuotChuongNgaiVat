@@ -1,22 +1,27 @@
 import axios from "axios";
 const baseUrl = "http://localhost:2022";
 
-const handleSignUpAPI = async (newData) => {
+const getQuestion = async () => {
+  return await axios(baseUrl + "/questions/");
+};
+
+const createAnswer = async (newData) => {
   let data = JSON.stringify({
+    question: newData.question,
     username: newData.username,
+    time: newData.time,
   });
 
   let config = {
     method: "post",
-    url: baseUrl + "/students/signup",
+    url: baseUrl + "/answers",
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",
     },
     data: data,
   };
-  console.log(baseUrl);
   return await axios(config);
 };
 
-export { handleSignUpAPI };
+export { createAnswer, getQuestion };
